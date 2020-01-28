@@ -15,7 +15,6 @@ export default {
                 const request = await res.json()
                 request['date'] = new Date().toJSON().slice(5, 16).replace(/-/g, '/').replace(/T/g, ' в ')
                 commit('updateRequestList', request)
-                // console.log(request)
             } catch (e) {
                 throw e
             }
@@ -24,7 +23,6 @@ export default {
     mutations: {
         updateRequestList(state, request) {
             state.requestList = [...state.requestList, request]
-            console.log(state.requestList)
         },
         clearRequestList(state) {
             state.requestList = []
